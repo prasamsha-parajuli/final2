@@ -1,39 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce Website</title>
-    <link rel="stylesheet" href="style.css">
-    <!--font awesome cdn link for icons-->
-    <script src="https://kit.fontawesome.com/5fce70dfef.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-<section id="header">
-    <a href="index.php" class="logo" alt="">ThriftNest</a>
-    
-
-    <div>
-        <ul id="navbar">
-<li><a  href="index.php">Home</a></li>
-<li><a class="active" href="shop.html">Shop</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="signin.php">Sign in</a></li>
-<li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-        </ul>
-    </div>
-</section>
-
-
-<section id="page-header">
-<h4>Shop By Category</h4>
-</section>
-<hr>
-
-
-<hr>
 <footer class="section-p1" >
     <div class="col">
         <img src="" class="logo" alt="">
@@ -53,7 +17,7 @@
     </div>
     <div class="col">
 <h4>About</h4>
-<a href="#">About Us</a>
+<a href="about.php">About Us</a>
 <a href="#">Delivery information</a>
 <a href="#">Privacy policy</a>
 <a href="#">Terms and Conditions</a>
@@ -71,12 +35,8 @@
 
             <div class="col">
                 <h4>Earn with Us</h4>
-                <a href="#">Become a Seller.</a>
+                <a href="sigin.php">Become a Seller.</a>
             </div>
             <div class="copyright"><p>	&#169; ThriftNest Pvt. Ltd. <strong> All Rights Reserved </strong> PRIVACY POLICY</p></div>
   
 </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>

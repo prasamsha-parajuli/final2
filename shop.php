@@ -10,21 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<section id="header">
-    <a href="index.php" class="logo" alt="">ThriftNest</a>
-    
+<!-- shop.php -->
+<?php include 'navbar.php'; ?>
 
-    <div>
-        <ul id="navbar">
-<li><a  href="index.php">Home</a></li>
-<li><a class="active" href="shop.html">Shop</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="signin.php">Sign in</a></li>
-<li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-        </ul>
-    </div>
-</section>
+
 <section id="page-header">
 <h4>Shop By Category</h4>
 <p>save more with coupons upto 70% off!</p> 
@@ -330,49 +319,7 @@
 </section>
 
 <hr>
-<footer class="section-p1" >
-    <div class="col">
-        <img src="" class="logo" alt="">
-        <h4>Contact</h4>
-        <p><strong>Address:</strong> Gairigan,Tinkune,Kathmandu,44600</p>
-        <p><strong>Phone:</strong> +977-9840594451, +977-98803940517</p>
-        <div class="follow">
-            <h4>Follow Us</h4>
-            <div class="icons">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
-
-            </div>
-        </div>
-
-    </div>
-    <div class="col">
-<h4>About</h4>
-<a href="#">About Us</a>
-<a href="#">Delivery information</a>
-<a href="#">Privacy policy</a>
-<a href="#">Terms and Conditions</a>
-<a href="#">Contact Us</a>
-    </div>
-    <div class="col">
-        <h4>My Account</h4>
-        <a href="signin.php">Sign In</a>
-        <a href="#">View Cart</a>
-        <a href="#">Privacy policy</a>
-        <a href="#">My Wishlist</a>
-        <a href="#">Track my Order</a>
-        <a href="#">Help</a>
-            </div>
-
-            <div class="col">
-                <h4>Earn with Us</h4>
-                <a href="#">Become a Seller.</a>
-            </div>
-            <div class="copyright"><p>	&#169; ThriftNest Pvt. Ltd. <strong> All Rights Reserved </strong> PRIVACY POLICY</p></div>
-  
-</footer>
-
+<?php include 'footer.php'; ?>
     <script src="script.js"></script>
 </body>
 </html>
