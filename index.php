@@ -12,12 +12,12 @@
 </head>
 <body>
 <section id="header">
-    <a href="index.html" src="Image/logo.png" class="logo" alt="">ThriftNest</a>
+    <a href="index.php" class="logo" alt="">ThriftNest</a>
     
 
     <div>
         <ul id="navbar">
-<li><a class="active" href="index.html">Home</a></li>
+<li><a class="active" href="index.php">Home</a></li>
 <li><a href="shop.html">Shop</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="about.html">About</a></li>
@@ -31,7 +31,7 @@
     <h2>Your chance to Earn by</h2>
     <h1>Selling your Pre-Loved Items!</h1>
     <p>Keep 100% of the profit you've earned!</p>
-    <button> <a href="signin.php" style="text-decoration: none;">Register Now</a></button>
+    <button> <a href="signin.php" style="text-decoration: none; color:#551A8B;">Register Now</a></button>
 
 </section>
 <hr>
@@ -64,7 +64,7 @@
                 </div>
                 <h4>Rs 500</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
         
             </div>
             <div class="pro">
@@ -81,7 +81,7 @@
                 </div>
                 <h4>Rs 800</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" >  <i class="fas fa-shopping-cart cart"></i></i></a>
         
             </div>
             <div class="pro">
@@ -98,7 +98,7 @@
                 </div>
                 <h4>Rs 450</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" ><i class="fas fa-shopping-cart cart"></i></a>
         
             </div>
             <div class="pro">
@@ -115,7 +115,7 @@
                 </div>
                 <h4>Rs 500</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
         
             </div>
             <div class="pro">
@@ -132,7 +132,7 @@
                 </div>
                 <h4>Rs 545</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
         
             </div>
             <div class="pro">
@@ -149,7 +149,7 @@
                 </div>
                 <h4>Rs 455</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
         
             </div>
             <div class="pro">
@@ -166,7 +166,7 @@
                 </div>
                 <h4>Rs 700</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
         
             </div>
             <div class="pro">
@@ -183,7 +183,7 @@
                 </div>
                 <h4>Rs 390</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
         
             </div>
 
@@ -218,7 +218,7 @@
             </div>
             <h4>Rs 400</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+            <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
     
         </div>
         <div class="pro">
@@ -235,7 +235,7 @@
             </div>
             <h4>Rs 550</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+            <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
     
         </div>
         <div class="pro">
@@ -252,7 +252,7 @@
             </div>
             <h4>Rs 850</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+            <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
     
         </div>
         <div class="pro">
@@ -269,7 +269,7 @@
             </div>
             <h4>Rs 900</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+            <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
     
         </div>
         <div class="pro">
@@ -286,7 +286,7 @@
             </div>
             <h4>Rs 545</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+            <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
     
         </div>
         <div class="pro">
@@ -303,7 +303,7 @@
             </div>
             <h4>Rs 455</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+            <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
     
         </div>
         <div class="pro">
@@ -320,7 +320,7 @@
             </div>
             <h4>Rs 790</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+            <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
     
         </div>
         <div class="pro">
@@ -337,7 +337,7 @@
             </div>
             <h4>Rs 590</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+            <a href="#" >  <i class="fas fa-shopping-cart cart"></i></a>
 
     
         </div>

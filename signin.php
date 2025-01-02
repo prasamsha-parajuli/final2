@@ -1,93 +1,106 @@
+    <?php
+      session_start();
+    require 'config.php';
+    $error=[];
+    if(isset($_POST['submit'])){
+        $name=trim($_POST['name']);
+        $email=trim($_POST['email']);
+        $pass=$_POST['password'];
+        $cpass=$_POST['cpassword'];
+        $user_type=$_POST['user_type'];
+    //server side validation
+        if(empty($name)||empty($email)||empty($pass)||empty($cpass)){
+            $error[]='All fields are required';
+        }
+        elseif(!preg_match("/^[a-zA-Z\s]+$/", $name)){
+            $error[]='Name should only contain letters';
+        }
+        elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            $error[]='Invalid Email format!';
+        }
+
+    elseif($pass!=$cpass){
+            $error[]='Password donot match!'; 
+        
+    }
+        else{
+            //checks if the email already exists
+            $stmt=$conn->prepare("SELECT * FROM user_form WHERE email=? ");
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result=$stmt->get_result();
+
+        if($result->num_rows>0){
+            $error[]='User already exist!';
+        }
+        else{
+            //checks admin count
+            if($user_type==='admin'){
+                $stmt=$conn->prepare("SELECT COUNT(*) as count from user_form where user_type='admin'");
+                $stmt->execute();
+                $adminCount=$stmt->get_result()->fetch_assoc()['count'];
+                if($adminCount>=2){
+                    $error[]="Admin account limit reached";
+                } 
+            }
+            if(empty($error)){
+                //inserts user
+                $hashedPass=password_hash($pass,PASSWORD_BCRYPT);
+                $stmt=$conn->prepare("INSERT INTO user_form(name,email,password,user_type) VALUES(?,?,?,?)");
+                $stmt->bind_param("ssss", $name,$email,$hashedPass,$user_type);
+                if($stmt->execute()){
+                    header('location:login_form.php');
+                    exit();
+                }
+                else{
+               $error[]='Registration Failed, Please try again later.';
+                }
+            }
+    }
+        }
+    };
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
-    <link rel="stylesheet" href="style.css">
-    <!--font awesome cdn link for icons-->
-    <script src="https://kit.fontawesome.com/5fce70dfef.js" crossorigin="anonymous"></script>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="regstyle.css">
+     <!--font awesome cdn link for icons-->
+     <script src="https://kit.fontawesome.com/5fce70dfef.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body id="container1" class="last-try">
-    <section id="header">
-        <a href="index.html" src="Image/logo.png" class="logo" alt="">ThriftNest</a>
-        <div>
-            <ul id="navbar">
-    <li><a  href="index.html">Home</a></li>
-    <li><a  href="shop.html">Shop</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a class="active" href="signin.php">Sign in</a></li>
-    <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-            </ul>
-        </div>
-    </section>
-
-
-
-<div id="signUp" class="container" >
    
-    <h1 class="form-title">Register</h1>
-    <form method="post" action="register.php">
-        <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text" name="fName" placeholder="First Name" id="fName" required>
-            <label for="fName">First Name</label>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text" name="lName" placeholder="Last Name" id="lName" required>
-            <label for="lName">Last Name</label>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input type="email" name="email" placeholder="Email Address" id="email" required>
-            <label for="email">Email Address</label>
-        </div>
-        <!-- <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input type="email" name="email" placeholder="Email Address" id="email" required>
-            <label for="email">Email Address</label>
-        </div> -->
-        <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password" placeholder="Password" id="password" required>
-            <label for="password">Password</label>
-        </div>
-        <input class="btn" type="submit" value="Sign Up" name="signUp">
-    </form>
-      <div class="links">
-        <p>Already have an account?</p>
-        <button id="signInButton" class="login">Sign In</button>
-    </div>
+</head>
+<body>
+    <div class="form-container">
+       
+        <form action="" method="POST">
+        <h3>Registration Form</h3>
+
+        <?php 
+        if(isset($error)){
+            foreach($error as $error){
+                echo '<span class="error_msg">'.$error.'</span>';
+            };
+        };
+        ?>
+               <input type="text"  name="name" required placeholder="Full Name">
+                <input type="email"  name="email" required placeholder="Email">
+                <input type="password"  name="password" required placeholder="Password">
+                <input type="password"  name="cpassword" required placeholder="Confirm Password">
+                <select name="user_type">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+</select>
+
+                <input type="submit" name="submit" value="Register" class="form-btn">
+                <p>Already have an account?<a href="login_form.php">Login</a></p>
+
+
+</form>
 </div>
 
-<div id="signIn" class="container" style="display:none;">
-  
-    <h1 class="form-title">Sign In</h1>
-    <form method="post" action="register.php">
-        <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input type="email" name="email" placeholder="Email Address" id="email" required>
-            <label for="email">Email Address</label>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password" placeholder="Password" id="password" required>
-            <label for="password">Password</label>
-        </div>
-        <!-- <p class="recover">
-            <a href="#">Recover Password</a>
-        </p> -->
-        <input class="btn" type="submit" value="Sign In" name="signIn">
-    </form>
-      <div class="links">
-        <p>Don't have an account yet?</p>
-        <button id="signUpButton" class="login">Sign Up</button>
-    </div>
-</div>
-
-    <script src="script.js"></script>
 </body>
 </html>
