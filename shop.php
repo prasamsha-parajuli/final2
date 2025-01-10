@@ -18,7 +18,7 @@
 <h4>Shop By Category</h4>
 <p>save more with coupons upto 70% off!</p> 
 </section>
-<hr>
+
 <!--
 
 
@@ -40,15 +40,18 @@
                 <span>sweatshirt</span>
                 <h5> Crew Neck Sweatshirt</h5>
                 <div class="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+               
                 </div>
                 <h4>Rs 500</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                    <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
         
             </div>
             <div class="pro">
@@ -57,15 +60,18 @@
                 <span>skirt</span>
                 <h5> Belle Poque Vintage Denim Skirt</h5>
                 <div class="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+            
                 </div>
                 <h4>Rs 800</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                    <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
         
             </div>
             <div class="pro">
@@ -74,15 +80,18 @@
                 <span>sweater</span>
                 <h5> Women's woolen sweater</h5>
                 <div class="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                
                 </div>
                 <h4>Rs 450</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                    <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
         
             </div>
             <div class="pro">
@@ -91,15 +100,18 @@
                 <span>sweatshirt</span>
                 <h5> California Sweatshirt</h5>
                 <div class="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                
                 </div>
                 <h4>Rs 500</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                    <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
         
             </div>
             <div class="pro">
@@ -108,15 +120,18 @@
                 <span>sweater</span>
                 <h5> Zipper Drop Shoulder Pullover</h5>
                 <div class="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                  
                 </div>
                 <h4>Rs 545</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                    <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
         
             </div>
             <div class="pro">
@@ -125,16 +140,18 @@
                 <span>hoodie</span>
                 <h5> Unisex Hoodie</h5>
                 <div class="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                 
                 </div>
                 <h4>Rs 455</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
-        
+                    <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
             </div>
             <div class="pro">
                 <img src="Image/Products/idkwhatthisis.jpeg">
@@ -142,16 +159,18 @@
                 <span>jacket</span>
                 <h5> Faux Fur-Trimmed Liner Jacket</h5>
                 <div class="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+            
                 </div>
                 <h4>Rs 700</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
-        
+                    <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
             </div>
             <div class="pro">
                 <img src="Image/Products/Womens High Waist Plaid Skirt.jpeg">
@@ -159,16 +178,18 @@
                 <span>skirt</span>
                 <h5> High Waist Plaid Mini-Skirt</h5>
                 <div class="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                 
                 </div>
                 <h4>Rs 390</h4>
                     </div>
-                <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
-        
+                    <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
             </div>
     <div class="pro-container">
         <div class="pro">
@@ -177,15 +198,18 @@
             <span>tops</span>
             <h5> Full sleeved crop woolen top</h5>
             <div class="star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+              
             </div>
             <h4>Rs 400</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
     
         </div>
         <div class="pro">
@@ -194,15 +218,18 @@
             <span>pant</span>
             <h5> Formal straight pant</h5>
             <div class="star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+        
             </div>
             <h4>Rs 550</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
     
         </div>
         <div class="pro">
@@ -211,16 +238,18 @@
             <span>jacket</span>
             <h5>Unisex puffer jacket</h5>
             <div class="star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+      
             </div>
             <h4>Rs 850</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
-    
+                <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
         </div>
         <div class="pro">
             <img src="Image/Products/winter Coat.jpeg">
@@ -228,16 +257,18 @@
             <span>coat</span>
             <h5>Stylish winter long-fur coat</h5>
             <div class="star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+              
             </div>
             <h4>Rs 900</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
-    
+                <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
         </div>
         <div class="pro">
             <img src="Image/Products/Cotton_Flannel.jpeg">
@@ -245,15 +276,18 @@
             <span>shirt</span>
             <h5> Olive green Cotton Flannel</h5>
             <div class="star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+            
             </div>
             <h4>Rs 545</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
     
         </div>
         <div class="pro">
@@ -262,16 +296,18 @@
             <span>scarfs</span>
             <h5> Red Woolen Scarf</h5>
             <div class="star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+         
             </div>
             <h4>Rs 455</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
-    
+                <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
         </div>
         <div class="pro">
             <img src="Image/Products/Men's Retro Straight Wide Leg Jeans.jpeg">
@@ -279,15 +315,18 @@
             <span>pant</span>
             <h5>Men's Retro Straight Wide Leg Jeans</h5>
             <div class="star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+            
             </div>
             <h4>Rs 790</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
     
         </div>
         <div class="pro">
@@ -296,15 +335,18 @@
             <span>skirt</span>
             <h5> Woolen Split Knit Midi Skirt</h5>
             <div class="star">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+            
             </div>
             <h4>Rs 590</h4>
                 </div>
-            <a href="#" ><i class="fa-solid fa-cart-shopping cart"></i></a>
+                <div class="button-container">
+                <form action="add_to_cart.php" method="POST" class="button-form">
+                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
+                    <input type="hidden" name="product_price" value="500">
+                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+                </form>
+            </div>
     
         </div>
 

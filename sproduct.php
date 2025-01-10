@@ -15,10 +15,7 @@
 <section id="page-header">
 <h4>Shop By Category</h4>
 </section>
-<hr>
 
-
-<hr>
 <?php include 'footer.php'; ?>
 
     <script src="script.js"></script>

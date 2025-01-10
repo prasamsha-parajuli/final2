@@ -1,0 +1,21 @@
+
+/* About Us */
+#page-header.about-header{
+    background-image: url(Image/Banner/About.png); 
+
+}
+#about-head{
+    display: flex;
+    align-items:center;
+   
+}
+
+
+#about-head img{
+    width:50%;
+    height:auto;
+}
+
+#about-head div{
+    padding-left: 40px;
+}

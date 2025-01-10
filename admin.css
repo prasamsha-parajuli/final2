@@ -1,0 +1,57 @@
+/* admindashboard*/
+
+#admin1{
+    margin-top: 0;
+    display: flex;
+    
+      }
+      #menu{
+      width:300px;
+      height: calc(100vh - 60px);
+      background:#ba93c7 ;
+      position:sticky;
+      top:60px;
+      left:0;
+      padding-top:20px;
+   }
+  
+   .admin-items{
+      padding:0;
+  
+   } 
+  
+   #menu .admin-items li{
+      list-style: none;
+      padding:15px 0;
+  
+   }
+   #menu .admin-items li:hover{
+      background:white;
+      cursor: pointer;
+   }
+   #menu .admin-items li.active{
+    background: white;
+    color:#551A8B;
+
+   }
+   #menu .admin-items li.active a{
+    font-weight: bold;
+   }
+   #menu .admin-items li i{
+      color:#551A8B;
+      width:30px;
+      height:30px;
+      line-height:30px;
+      text-align:center;
+      font-size: 14px;
+      margin:0 10px 0 25px;
+   }
+  
+   #menu .admin-items li a{
+      text-decoration: none;
+      color:#551A8B;
+      font-weight: 300;
+      
+   }
+
+

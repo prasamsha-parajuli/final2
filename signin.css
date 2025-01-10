@@ -1,0 +1,81 @@
+/* register and login */
+
+.form-container{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+justify-content: center;
+padding:20px;
+padding-bottom: 60px;
+background:#fde1ff;
+
+}
+.form-container form{
+    padding:20px;
+    border-radius:5px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+    background:#fff;
+    text-align:center;
+width:500px;
+}
+.form-container form h3{
+    font-size:30px;
+    text-transform: uppercase;
+margin-bottom:10px;
+color:#333;
+
+}
+.form-container form input,
+.form-container form select{
+    width:100%;
+    padding:10px 15px;
+    font-size: 17px;
+    margin:8px 0;
+    background:#fde1ff;
+    border-radius:5px;
+    text-decoration: none;
+    border:none;
+    outline: none;
+}
+.form-container form select option{
+    background:#fff;
+}
+.form-container form .form-btn{
+        background:#fbd0f9;
+        color:rgb(220, 20, 210);
+        text-transform: capitalize;
+        font-size:20px;
+        text-decoration: none;
+        border:none;
+        outline: none;
+        cursor: pointer;
+}
+.form-container form .form-btn:hover{
+    background:rgb(220, 20, 210);
+    color:#fff;
+}
+.form-container form p{
+    margin-top:10px;
+    font-size:20px;
+    color:#333;
+}
+.form-container form p a{
+    color:rgb(220, 20, 210);
+}
+.form-container form .error_msg{
+    margin-top:5px;
+    display:block;
+    font-size: 12;
+    color:crimson;
+    
+/* margin:5px 0 10px 0;
+display:block;
+background: crimson;
+color:#fff;
+border-radius:5px;
+font-size:14px;
+padding:5px 10px;
+text-decoration: none;
+border:none;
+outline: none; */
+}
