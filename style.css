@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Spartan', san-serif;
+    font-family: 'Spartan', sans-serif;
 }
 h1{
     font-size: 50px;
@@ -48,7 +48,7 @@ body{
         padding: 20px 80px;
         background: #ba93c7;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    z-index: 999;
+    z-index: 1000;
     position: sticky;
     top:0;
     left:0;

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'config.php';
+
 $adminError=[];
 $email='';//initializing email to use in the form 
 if($_SERVER['REQUEST_METHOD'] === 'POST'&& isset($_POST['submit'])){
@@ -22,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'&& isset($_POST['submit'])){
   if(password_verify($pass,$admin['password'])){
     $_SESSION['admin_name']=$admin['name'];
     if ($admin['user_type'] === 'admin') {
-        header('Location: admin.php');
+        header('Location: admin2.php');
         exit();
     }
 
