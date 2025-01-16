@@ -1,6 +1,7 @@
 <?php 
-
 include 'auth.php';
+include 'config.php'; 
+
 
 $sql="UPDATE user_form
 SET 

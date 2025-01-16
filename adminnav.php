@@ -1,3 +1,4 @@
+
  <section id="navbar">
         <div class="navigation">
             <div class="logo">
@@ -18,7 +19,7 @@
                 <li><i class="fa-solid fa-bag-shopping"></i><a href="order_list.php">Ordered Lists</a></li>
                 <li><i class="fa-solid fa-user"></i><a href="user_list.php">Users List</a></li>
                 <li><i class="fa-solid fa-users"></i><a  href="request_seller.php">Seller's Request</a></li>
-                <li><i class="fa-solid fa-right-from-bracket"></i><a href="adminlogin.php">Log Out</a></li>
+                <li><i class="fa-solid fa-right-from-bracket"></i><a href="admin_logout.php">Log Out</a></li>
           
         </div>
     </section>

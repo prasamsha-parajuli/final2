@@ -1,5 +1,7 @@
 <?php 
 include 'auth.php';
+include 'config.php'; 
+
 if(isset($_GET['id']) && !empty($_GET['id'])){
     //access granted
     $id=(int)$_GET['id']; //data type casting

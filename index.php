@@ -1,5 +1,13 @@
 <?php
 include 'config.php';
+$query="SELECT * FROM products";
+$result=mysqli_query($conn,$query);
+if(mysqli_num_rows($result)>0){
+    $products=mysqli_fetch_all($result,MYSQLI_ASSOC);
+}
+else{
+    $products=[];
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,168 +40,31 @@ include 'config.php';
         <h2>Featured Products</h2>
         <p>Winter Thrifts for 2024 </p>
         <div class="pro-container">
-            
+            <?php foreach($products as $product):?>
             <div class="pro">
-                <img src="Image/Products/CREW NECK JUMPER - BROWN - XS.jpeg">
+                <img src="<?php echo htmlspecialchars($product['product_image']);?>">
                 <div class="description">
-                <span>sweatshirt</span>
-                <h5> Crew Neck Sweatshirt</h5>
-                <div class="star">
+                <span><?php echo htmlspecialchars($product['category']);?></span>
+                <h5><?php echo htmlspecialchars($product['product_name']);?></h5>
+                <!-- <div class="star">
                   
-                </div>
-                <h4>Rs 500</h4>
+                </div> -->
+                <h4>Rs.<?php echo htmlspecialchars($product['product_price']);?></h4>
                     </div>
                     <div class="button-container">
                 <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
+                    <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product['product_id']);?>"> <!-- Replace with dynamic product ID -->
+                    <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($product['product_name']);?>">
+                    <input type="hidden" name="product_price" value="<?php echo htmlspecialchars($product['product_price']);?>">
                     <button type="submit" class="btn add-to-cart">Add to Cart</button>
                 </form>
             </div>
 
             </div>
+            <?php endforeach; ?>
             
-            <div class="pro">
-                <img src="Image/Products/Belle Poque Vintage Denim Skirts.jpeg">
-                <div class="description">
-                <span>skirt</span>
-                <h5> Belle Poque Vintage Denim Skirt</h5>
-                <div class="star">
-                </div>
-                <h4>Rs 800</h4>
-                    </div>
-                    <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-
-        
-            </div>
-            <div class="pro">
-                <img src="Image/Products/Women's woolen sweater.jpeg">
-                <div class="description">
-                <span>sweater</span>
-                <h5> Women's woolen sweater</h5>
-                <div class="star">
-              
-                </div>
-                <h4>Rs 450</h4>
-                    </div>
-                    <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-        
-            </div>
-            <div class="pro">
-                <img src="Image/Products/California Sweatshirts.jpeg">
-                <div class="description">
-                <span>sweatshirt</span>
-                <h5> California Sweatshirt</h5>
-                <div class="star">
-              
-                </div>
-                <h4>Rs 500</h4>
-                    </div>
-                    <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-        
-            </div>
-            <div class="pro">
-                <img src="Image/Products/DAZY Men Quarter Zipper Drop Shoulder Pullover.jpeg">
-                <div class="description">
-                <span>sweater</span>
-                <h5> Zipper Drop Shoulder Pullover</h5>
-                <div class="star">
-              
-                </div>
-                <h4>Rs 545</h4>
-                    </div>
-                    <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-            </div>
-            <div class="pro">
-                <img src="Image/Products/Unisex Hoodie.jpeg">
-                <div class="description">
-                <span>hoodie</span>
-                <h5> Unisex Hoodie</h5>
-                <div class="star">
-                
-                </div>
-                <h4>Rs 455</h4>
-                    </div>
-                    <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-            </div>
-            <div class="pro">
-                <img src="Image/Products/idkwhatthisis.jpeg">
-                <div class="description">
-                <span>jacket</span>
-                <h5> Faux Fur-Trimmed Liner Jacket</h5>
-                <div class="star">
-                
-                </div>
-                <h4>Rs 700</h4>
-                    </div>
-                    <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-        
-            </div>
-            <div class="pro">
-                <img src="Image/Products/Womens High Waist Plaid Skirt.jpeg">
-                <div class="description">
-                <span>skirt</span>
-                <h5> High Waist Plaid Mini-Skirt</h5>
-                <div class="star">
-               
-                </div>
-                <h4>Rs 390</h4>
-                    </div>
-                    <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-            </div>
-
-        </div>
-
+          
+           
    </section>
    <hr>
 <!-- </section> -->
@@ -205,173 +76,7 @@ include 'config.php';
 </section>
 
 
-<section id="product1" class="section-p1">
-    <h2>More Winter Collections</h2>
-    <p>Winter Thrifts for 2024 </p>
-    <div class="pro-container">
-        <div class="pro">
-            <img src="Image/Products/_ (7).jpeg">
-            <div class="description">
-            <span>tops</span>
-            <h5> Full sleeved crop woolen top</h5>
-            <div class="star">
-              
-            </div>
-            <h4>Rs 400</h4>
-                </div>
-                <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-        </div>
-        <div class="pro">
-            <img src="Image/Products/Formal straight pant.jpeg">
-            <div class="description">
-            <span>pant</span>
-            <h5> Formal straight pant</h5>
-            <div class="star">
-          
-            </div>
-            <h4>Rs 550</h4>
-                </div>
-                <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-    
-        </div>
-        <div class="pro">
-            <img src="Image/Products/Winter puffer Jacket.jpeg">
-            <div class="description">
-            <span>jacket</span>
-            <h5>Unisex puffer jacket</h5>
-            <div class="star">
-             
-            </div>
-            <h4>Rs 850</h4>
-                </div>
-                <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-        </div>
-        <div class="pro">
-            <img src="Image/Products/winter Coat.jpeg">
-            <div class="description">
-            <span>coat</span>
-            <h5>Stylish winter long-fur coat</h5>
-            <div class="star">
-           
-            </div>
-            <h4>Rs 900</h4>
-                </div>
-                <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-    
-        </div>
-        <div class="pro">
-            <img src="Image/Products/Cotton_Flannel.jpeg">
-            <div class="description">
-            <span>shirt</span>
-            <h5> Olive green Cotton Flannel</h5>
-            <div class="star">
-              
-            </div>
-            <h4>Rs 545</h4>
-                </div>
-                <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-    
-        </div>
-        <div class="pro">
-            <img src="Image/Products/Red scarf.jpeg">
-            <div class="description">
-            <span>scarfs</span>
-            <h5> Red Woolen Scarf</h5>
-            <div class="star">
-          
-            </div>
-            <h4>Rs 455</h4>
-                </div>
-                <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-    
-        </div>
-        <div class="pro">
-            <img src="Image/Products/Men's Retro Straight Wide Leg Jeans.jpeg">
-            <div class="description">
-            <span>pant</span>
-            <h5>Men's Retro Straight Wide Leg Jeans</h5>
-            <div class="star">
-           
-            </div>
-            <h4>Rs 790</h4>
-                </div>
-                <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
-    
-        </div>
-        <div class="pro">
-            <img src="Image/Products/Woolen Split Knit Midi Skirt - M - Khaki.jpeg">
-            <div class="description">
-            <span>skirt</span>
-            <h5> Woolen Split Knit Midi Skirt</h5>
-            <div class="star">
-             
-            </div>
-            <h4>Rs 590</h4>
-                </div>
-                <div class="button-container">
-                <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="1"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="Crew Neck Sweatshirt">
-                    <input type="hidden" name="product_price" value="500">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
-            </div>
 
-    
-        </div>
-
-    </div>
-
-</section>
 <hr>
 <?php include 'footer.php'; ?>
     <script src="script.js"></script>

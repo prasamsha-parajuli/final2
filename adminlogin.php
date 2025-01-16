@@ -4,6 +4,8 @@ require 'config.php';
 
 $adminError=[];
 $email='';//initializing email to use in the form 
+
+
 if($_SERVER['REQUEST_METHOD'] === 'POST'&& isset($_POST['submit'])){
     $email=trim($_POST['email']);
     $pass=$_POST['password'];
