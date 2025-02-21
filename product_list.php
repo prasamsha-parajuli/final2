@@ -84,20 +84,20 @@ if(isset($_POST['add_product'])){
             <h3>Add Product</h3>
 <form action="product_list.php" method="POST" enctype="multipart/form-data">
     <label for="product_name">Product Name:</label>
-    <input type="text" id="product_name" name="product_name" required>
+    <input type="text" id="product_name" name="product_name" >
     <span style="color:red;"><?php echo $product_name_err;?></span>
 
     <label for="product_price">Product Price:</label>
-    <input type="number" id="product_price" name="product_price" required>
+    <input type="number" id="product_price" name="product_price" >
     <span style="color:red;"><?php echo $product_price_err;?></span>
 
     <label for="product_image">Product Image:</label>
-    <input type="file" id="product_image" name="product_image" accept="image/*" required>
+    <input type="file" id="product_image" name="product_image" accept="image/*" >
     <span style="color:red;"><?php echo $image_err;?></span>
 
 
     <label for="category">Category:</label>
-    <input type="text" id="category" name="category" required>
+    <input type="text" id="category" name="category" >
     <span style="color:red;"><?php echo $category_err;?></span>
 
     <button type="submit" name="add_product">Add Product</button>

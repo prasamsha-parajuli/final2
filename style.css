@@ -360,5 +360,239 @@ footer .copyright{
     font-size: 16px;
     font-weight: 600;
 }
+/* Cart Page Container */
+.cart-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h1 {
+    text-align: center;
+    color: #610881;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Cart Table */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.cart-table th {
+    background-color: #610881;
+    color: #fff;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cart-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.cart-table td img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cart-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Remove Button */
+.remove-btn {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c9302c;
+    transform: scale(1.05);
+}
+
+/* Checkout Button */
+.checkout-btn {
+    background-color: #610881;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #8b36c8;
+}
+
+/* Empty Cart Message */
+.empty-cart-msg {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+/* Checkout Page */
+.checkout-container {
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #745293;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-container h1 {
+    text-align: center;
+    color: #610881;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.checkout-container .form-group {
+    margin-bottom: 20px;
+}
+
+.checkout-container label {
+    font-size: 16px;
+    color: #610881;
+}
+
+.checkout-container input,
+.checkout-container textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.checkout-container input[type="text"],
+.checkout-container input[type="email"] {
+    height: 40px;
+}
+
+.checkout-container textarea {
+    resize: vertical;
+    height: 50px;
+}
+
+.checkout-summary {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    color: #610881;
+}
+
+.checkout-summary button {
+    background-color: #610881;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-summary button:hover {
+    background-color: #8b36c8;
+}
+
+/* Input Fields for Checkout */
+.checkout-container input:focus,
+.checkout-container textarea:focus {
+    border-color: #610881;
+    outline: none;
+}
+
+/* Form Container */
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Continue Shopping Button */
+.continue-shopping-btn {
+    display: inline-block;
+    background-color: #610881;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.continue-shopping-btn:hover {
+    background-color: #8b36c8;
+}
+
+/* Checkout Form */
+.checkout-form input[type="text"],
+.checkout-form input[type="phone"],
+.checkout-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.checkout-form label {
+    font-size: 16px;
+    color: #610881;
+}
+
+.checkout-form button {
+    background-color: #610881;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-form button:hover {
+    background-color: #8b36c8;
+}
 
 

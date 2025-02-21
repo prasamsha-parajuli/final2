@@ -25,11 +25,12 @@ include 'config.php';
                         <th>Email</th>
                         <th>User Type</th>
                         <th>Phone</th>
+                        <th>Address</th>
                         <th>Action</th>
                     
 </tr>
 <?php
-$sql= "SELECT id, name, email, user_type, phone FROM user_form";
+$sql= "SELECT user_id, name, email, user_type, phone, address FROM user_form";
 $query=mysqli_query($conn,$sql);
 $i=1;
 if(mysqli_num_rows($query)<=0){
@@ -49,9 +50,10 @@ else{
         <td><?php echo $row['email'];?></td>
         <td><?php echo $row['user_type'];?></td>
         <td><?php echo $row['phone'];?></td>
+        <td><?php echo $row['address'];?></td>
         <td class="action-buttons">
-            <a href="edit_user.php?id=<?php echo $row['id'];?>" class="edit">Edit</a>
-            <a href="delete_user.php?id=<?php echo $row['id'];?>" class="delete" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+            <a href="edit_user.php?id=<?php echo $row['user_id'];?>" class="edit">Edit</a>
+            <a href="delete_user.php?id=<?php echo $row['user_id'];?>" class="delete" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
 </td>
       
 </tr>

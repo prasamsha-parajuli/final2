@@ -35,7 +35,13 @@ else{
 
 </section>
 <hr>
+<!-- </section> -->
 
+<section id="banner2" class="section-m1">
+<h4>Eager to Buy?</h4>
+<h2>Signin now to find your <span>Unigue Style.</span></h2>
+<button class="normal">Sign In</button>
+</section>
     <section id="product1" class="section-p1">
         <h2>Featured Products</h2>
         <p>Winter Thrifts for 2024 </p>
@@ -52,12 +58,11 @@ else{
                 <h4>Rs.<?php echo htmlspecialchars($product['product_price']);?></h4>
                     </div>
                     <div class="button-container">
+              
                 <form action="add_to_cart.php" method="POST" class="button-form">
-                    <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product['product_id']);?>"> <!-- Replace with dynamic product ID -->
-                    <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($product['product_name']);?>">
-                    <input type="hidden" name="product_price" value="<?php echo htmlspecialchars($product['product_price']);?>">
-                    <button type="submit" class="btn add-to-cart">Add to Cart</button>
-                </form>
+    <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product['product_id']); ?>">
+    <button type="submit" class="btn add-to-cart">Add to Cart</button>
+</form>
             </div>
 
             </div>

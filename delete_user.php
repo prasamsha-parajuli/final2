@@ -10,7 +10,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         exit();
     }
     //old record of  databse retrived from database to display in the form
-    $sql_1="SELECT id, name, email, user_type, phone FROM user_form where $id= ".$id;
+    $sql_1="SELECT user_id, name, email, user_type, phone,address FROM user_form where user_id= ".$id;
     $query_1=mysqli_query($conn,$sql_1);
 
     //validates if there is data in the table or not
@@ -19,7 +19,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         exit();
 
     }
-    $sql="DELETE FROM user_form WHERE id=".$id;
+    $sql="DELETE FROM user_form WHERE user_id=".$id;
     $query=mysqli_query($conn,$sql);
      
     if ($query){

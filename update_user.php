@@ -7,8 +7,9 @@ $sql="UPDATE user_form
 SET 
 name='".$_POST['user_name']."',
 email='".$_POST['user_email']."',
-phone='".$_POST['phone']."'
-WHERE id=".$_GET['id'];
+phone='".$_POST['phone']."',
+address='".$_POST['address']."'
+WHERE user_id=".$_GET['id'];
 //executing query in databaase
 $query=mysqli_query($conn,$sql);
 if($query){

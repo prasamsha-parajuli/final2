@@ -1,40 +1,41 @@
 <?php
 session_start();
-require 'config.php';
-$generalError=[];
-if($_SERVER['REQUEST_METHOD'] === 'POST'&& isset($_POST['submit'])){
-    $email=trim($_POST['email']);
-    $pass=$_POST['password'];
-    if(empty($email) ||empty($pass)){
-      $generalError[]='All fields are required';
+include 'config.php';
 
-    } 
-    else{
-      $stmt=$conn->prepare("SELECT * FROM user_form WHERE email=? ");
-      $stmt->bind_param("s", $email);
-      $stmt->execute();
+$generalError = []; // Array to store error messages
+$email = ""; // Initialize email/username for pre-filling the form
 
-      $result=$stmt->get_result();
-  
-      if($result->num_rows>0){
-        $user=$result->fetch_assoc() ;
-  if(password_verify($pass,$user['password'])){
-    $_SESSION['user_name']=$user['name'];
-      header('Location:user_page.php');
-      exit();
-  }
-        else{
-          $generalError[]='Incorrect password';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['email']) && isset($_POST['password'])) {
+        $identifier = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = $_POST['password'];
+
+        $query = "SELECT * FROM user_form WHERE email = '$identifier' OR name = '$identifier'";
+        $result = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+            $user = mysqli_fetch_assoc($result);
+
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['user_name'] = $user['name'];
+                $_SESSION['user_id'] = $user['user_id'];
+                $_SESSION['user_address'] = $user['address']; // Storing address in session
+
+                // Redirect to return URL or index.php
+                $return_url = isset($_GET['return_url']) ? $_GET['return_url'] : 'index.php';
+                header("Location: $return_url");
+                exit();
+            } else {
+                $generalError[] = "Invalid email/username or password!";
+            }
+        } else {
+            $generalError[] = "Invalid email/username or password!";
         }
-      }
-        else{
-          $generalError[]='No user found with this email';
-        }
+    } else {
+        $generalError[] = "Please provide both email/username and password!";
     }
-
-};
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,33 +45,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'&& isset($_POST['submit'])){
     <title>Login Form</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="signin.css">
-     <!--font awesome cdn link for icons-->
-     <script src="https://kit.fontawesome.com/5fce70dfef.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   
 </head>
 <body>
-<!-- login_form.php -->
 <?php include 'navbar.php'; ?>
 
-
-    <div class="form-container">
-       
-        <form action="" method="POST">
+<div class="form-container">
+    <form action="" method="POST">
         <h3>Login Form</h3>
         <?php if (!empty($generalError)) { ?>
             <?php foreach ($generalError as $error) { ?>
                 <span class="error_msg"><?php echo $error; ?></span>
             <?php } ?>
         <?php } ?>
-                <input type="email"  name="email"  placeholder="Email" value="<?php echo htmlspecialchars($email);?>">
-                <input type="password"  name="password"  placeholder="Password">
-                <input type="submit" name="submit" value="Login" class="form-btn">
-                <p>Don't have an account?<a href="signin.php">Register</a></p>
-
-
-</form>
+        <input type="text" name="email" placeholder="Email or Name" value="<?php echo htmlspecialchars($email); ?>" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" name="submit" value="Login" class="form-btn">
+        <p>Don't have an account? <a href="signin.php">Register</a></p>
+    </form>
 </div>
-
 </body>
 </html>

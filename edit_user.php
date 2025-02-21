@@ -11,7 +11,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         exit();
     }
     //old record of  databse retrived from database to display in the form
-    $sql_1="SELECT id, name, email, user_type, phone FROM user_form where id= ".$id;
+    $sql_1="SELECT user_id, name, email, user_type, phone,address FROM user_form where user_id= ".$id;
     $query_1=mysqli_query($conn,$sql_1);
 
     //validates if there is data in the table or not
@@ -43,7 +43,7 @@ else{
     <section id="interface">
         <div class="form-container">
             <h3>Edit User</h3>
-<form action="update_user.php?id=<?php echo $old_data['id'];?>" method="POST" >
+<form action="update_user.php?id=<?php echo $old_data['user_id'];?>" method="POST" >
     <label for="user_name">User Name:</label>
     <input type="text" id="user_name" name="user_name" value="<?php echo $old_data['name'];?>">
 
@@ -52,6 +52,8 @@ else{
 
     <label for="phone">Phone Number:</label>
     <input type="text" id="phone" name="phone" value="<?php echo $old_data['phone'];?>">
+    <label for="address">Phone Number:</label>
+    <input type="address" id="address" name="address" value="<?php echo $old_data['address'];?>">
 
     <button type="submit" name="save_changes">Save Changes</button>
 </form>

@@ -31,11 +31,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'&& isset($_POST['submit'])){
 
   }
         else{
-          $adminError[]='Incorrect password';
+          $adminError[]='Invalid admin username or password';
         }
       }
         else{
-          $adminError[]='No user found with this email';
+          $adminError[]='Invalid admin username or password';
         }
     }
 
