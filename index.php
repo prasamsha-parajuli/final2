@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'config.php';
 $query="SELECT * FROM products";
 $result=mysqli_query($conn,$query);

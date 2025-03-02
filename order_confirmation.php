@@ -11,7 +11,7 @@ $user_id = $_SESSION['user_id'];
 
 // Fetch all transaction details with grouped products
 $transaction_query = "
-    SELECT t.*, o.order_id, 
+    SELECT t.*, o.status, 
            GROUP_CONCAT(p.product_name SEPARATOR ', ') AS products,
            GROUP_CONCAT(p.product_image SEPARATOR ', ') AS product_images
     FROM transactions t
@@ -29,6 +29,7 @@ if (!$transaction_result) {
 }
 
 $transactions = (mysqli_num_rows($transaction_result) > 0) ? mysqli_fetch_all($transaction_result, MYSQLI_ASSOC) : [];
+
 ?>
 
 <!DOCTYPE html>
@@ -51,9 +52,9 @@ $transactions = (mysqli_num_rows($transaction_result) > 0) ? mysqli_fetch_all($t
             <table>
                 <tr>
                     <th>Transaction ID</th>
-                    <th>Order ID</th>
                     <th>Products</th>
                     <th>Amount</th>
+                    <th>Order Status</th>
                     <th>Payment Status</th>
                     <th>Payment Method</th>
                     <th>Transaction Date</th>
@@ -61,7 +62,6 @@ $transactions = (mysqli_num_rows($transaction_result) > 0) ? mysqli_fetch_all($t
                 <?php foreach ($transactions as $transaction): ?>
                     <tr>
                         <td><?php echo $transaction['transaction_id']; ?></td>
-                        <td><?php echo $transaction['order_id']; ?></td>
                         <td>
                             <?php 
                             $product_names = explode(",", $transaction['products']);
@@ -75,7 +75,9 @@ $transactions = (mysqli_num_rows($transaction_result) > 0) ? mysqli_fetch_all($t
                                 </div>
                             <?php endforeach; ?>
                         </td>
+                     
                         <td>Rs. <?php echo number_format($transaction['amount'], 2); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['status']); ?></td>
                         <td><?php echo htmlspecialchars($transaction['payment_status']); ?></td>
                         <td><?php echo htmlspecialchars($transaction['payment_method']); ?></td>
                         <td><?php echo date("d M Y, H:i:s", strtotime($transaction['transaction_date'])); ?></td>

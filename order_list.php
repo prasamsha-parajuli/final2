@@ -3,11 +3,8 @@ include 'auth.php';
 include 'config.php';
 
 // Query to fetch all orders along with order items
-$query = "SELECT o.order_id, o.user_id, o.order_date, o.status AS status, o.payment_status, 
-                 oi.product_id, oi.quantity, p.product_name
-          FROM orders o
-          JOIN order_items oi ON o.order_id = oi.order_id
-          JOIN products p ON oi.product_id = p.product_id";
+$query = "SELECT o.order_id, o.user_id, o.order_date, o.status AS status, o.payment_status
+          FROM orders o";
 $result = mysqli_query($conn, $query);
 
 if (!$result) {
@@ -43,10 +40,10 @@ if(mysqli_num_rows($result) > 0) {
                 <tr>
                     <th>Order ID</th>
                     <th>User ID</th>
-                    <th>Order Date</th>
                     <th>Order Status</th>
                     <th>Payment Status</th>
-                    <th>Action</th>
+                    <th>Products</th>
+                    <th>Order Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,28 +51,32 @@ if(mysqli_num_rows($result) > 0) {
                     <tr>
                         <td><?php echo $order['order_id']; ?></td>
                         <td><?php echo $order['user_id']; ?></td>
-                        <td><?php echo $order['order_date']; ?></td>
+                  
                         <td>
-                            <form method="POST" action="update_order_status.php">
-                                <select name="status" onchange="this.form.submit()">
-                                    <option value="Pending" <?php echo $order['status'] == 'Pending' ? 'selected' : ''; ?>>Pending</option>
-                                    <option value="Completed" <?php echo $order['status'] == 'Completed' ? 'selected' : ''; ?>>Delivered</option>
-                                    <option value="Cancelled" <?php echo $order['status'] == 'Cancelled' ? 'selected' : ''; ?>>Cancelled</option>
+                        <form method="POST" action="update_order_status.php">
+    <input type="hidden" name="order_id" value="<?php echo $order['order_id']; ?>">
+    <select name="status" onchange="this.form.submit()">
+        <option value="pending" <?php echo $order['status'] == 'pending' ? 'selected' : ''; ?>>Pending</option>
+        <option value="completed" <?php echo $order['status'] == 'completed' ? 'selected' : ''; ?>>Delivered</option>
+        <option value="cancelled" <?php echo $order['status'] == 'cancelled' ? 'selected' : ''; ?>>Cancelled</option>
+    </select>
+</form>
 
-                                </select>
-                            </form>
                         </td>
                         <td>
-                            <form method="POST" action="update_payment_status.php">
-                                <select name="payment_status" onchange="this.form.submit()">
-                                    <option value="Unpaid" <?php echo $order['payment_status'] == 'Unpaid' ? 'selected' : ''; ?>>Pending</option>
-                                    <option value="Paid" <?php echo $order['payment_status'] == 'Paid' ? 'selected' : ''; ?>>Paid</option>
-                                </select>
-                            </form>
+                        <form method="POST" action="update_payment_status.php">
+    <input type="hidden" name="order_id" value="<?php echo $order['order_id']; ?>">
+    <select name="payment_status" onchange="this.form.submit()">
+        <option value="unpaid" <?php echo $order['payment_status'] == 'unpaid' ? 'selected' : ''; ?>>Pending</option>
+        <option value="paid" <?php echo $order['payment_status'] == 'paid' ? 'selected' : ''; ?>>Paid</option>
+    </select>
+</form>
+
                         </td>
                         <td>
-                            <a href="view_order.php?id=<?php echo $order['order_id']; ?>" class="view">View Details</a>
+                            <a href="view_order.php?id=<?php echo $order['order_id']; ?>" class="view">View Product</a>
                         </td>
+                        <td><?php echo $order['order_date']; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

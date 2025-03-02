@@ -23,6 +23,6 @@ if (!$result) {
 }
 
 // Redirect back to the user's transaction page
-header("Location: user_transactions.php");
+header("Location:order_confirmation.php");
 exit();
 ?>

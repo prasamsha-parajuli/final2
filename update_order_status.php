@@ -1,19 +1,22 @@
 <?php
 include 'config.php';
 
-// Get the order ID and the new status
-$order_id = $_POST['order_id'];
-$status = $_POST['status'];
+// Get the order ID and status from the POST request
+$order_id = isset($_POST['order_id']) ? intval($_POST['order_id']) : 0;
+$status = isset($_POST['status']) ? mysqli_real_escape_string($conn, $_POST['status']) : '';
 
-// Update the order status
-$query_update_order = "UPDATE orders SET status = '$status' WHERE order_id = $order_id";
-mysqli_query($conn, $query_update_order);
+if ($order_id > 0 && !empty($status)) {
+    // Update order status
+    $query_update_order = "UPDATE orders SET status = '$status' WHERE order_id = $order_id";
+    $result = mysqli_query($conn, $query_update_order);
 
-// Update the transaction status for the respective order
-$query_update_transaction = "UPDATE transactions SET payment_status = '$status' WHERE order_id = $order_id";
-mysqli_query($conn, $query_update_transaction);
+    if (!$result) {
+        die("Error updating order status: " . mysqli_error($conn));
+    }
 
-// Redirect to the admin orders page
-header("Location: order_list.php");
-exit();
+    header("Location: order_list.php");
+    exit();
+} else {
+    die("Invalid order ID or status.");
+}
 ?>
