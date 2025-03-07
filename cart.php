@@ -19,8 +19,12 @@ if (isset($_GET['remove_id'])) {
     exit();
 }
 
+// Automatically remove items from cart if held for more than 24 hours
+$timeout_query = "DELETE FROM shopping_cart WHERE TIMESTAMPDIFF(HOUR, created_at, NOW()) > 24";
+mysqli_query($conn, $timeout_query);
+
 // Fetch cart items for the user
-$query = "SELECT sc.cart_id, sc.product_id, p.product_name, p.product_price, p.product_image 
+$query = "SELECT sc.cart_id, sc.product_id, p.product_name, p.product_price, p.product_image, sc.created_at
           FROM shopping_cart sc
           JOIN products p ON sc.product_id = p.product_id
           WHERE sc.user_id = $user_id";
@@ -31,14 +35,12 @@ $total_price = 0;
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $cart_items[] = $row;
-        $total_price += $row['product_price']; // Calculate total price
+        $total_price += $row['product_price'];
     }
 } else {
-    // Show continue shopping link if cart is empty
     $cart_empty = true;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,9 +55,9 @@ if (mysqli_num_rows($result) > 0) {
 
     <div class="cart-container">
         <h1>My Cart</h1>
-
+<p style="color:red;">Make sure that you purchase the items within the 24 hours time frame, otherwise it will be released back.</p>
         <?php if (isset($cart_empty)): ?>
-            <p class="empty-cart-msg">Your cart is empty.</p>
+            <p class="empty-cart-msg">Your cart is empty!!</p>
             <a href="index.php" class="continue-shopping-btn">Continue Shopping</a>
         <?php else: ?>
             <form action="checkout.php" method="POST">

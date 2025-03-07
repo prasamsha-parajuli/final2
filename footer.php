@@ -27,8 +27,7 @@
         <h4>My Account</h4>
         <a href="signin.php">Sign In</a>
         <a href="cart.php">View Cart</a>
-        <a href="#">Privacy policy</a>
-        <a href="#">My Wishlist</a>
+        <a href="privacy.php">Privacy policy</a>
         <a href="order_confirmation.php">Track my Order</a>
         <a href="#">Help</a>
             </div>
