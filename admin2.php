@@ -27,8 +27,8 @@ $sql_orders = "SELECT COUNT(*) AS total_orders FROM orders";
 $result_orders = mysqli_query($conn, $sql_orders);
 $total_orders = mysqli_fetch_assoc($result_orders)['total_orders'];
 
-// Get Total Sales (assuming amount is in the transactions table)
-$sql_sales = "SELECT SUM(amount) AS total_sales FROM transactions";
+// Get Total Sales (using orders table)
+$sql_sales = "SELECT SUM(total_amount) AS total_sales FROM orders WHERE status = 'completed'";
 $result_sales = mysqli_query($conn, $sql_sales);
 $total_sales = mysqli_fetch_assoc($result_sales)['total_sales'];
 ?>
@@ -62,7 +62,6 @@ $total_sales = mysqli_fetch_assoc($result_sales)['total_sales'];
             <div class="profile-details">
                 <h3>Your Profile</h3>
                 <?php 
-                    include 'config.php';
                     $sql = "SELECT user_id, name, email, phone, address FROM user_form WHERE user_type = 'admin' LIMIT 1";
                     $result = mysqli_query($conn, $sql);
                     $admin = mysqli_fetch_assoc($result);

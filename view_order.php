@@ -30,7 +30,7 @@ if (!$order_details) {
 }
 
 // Query to get ordered items with image
-$query_items = "SELECT oi.product_id, oi.quantity, p.product_name, p.product_price, p.product_image
+$query_items = "SELECT oi.product_id, p.product_name, p.product_price, p.product_image
                 FROM order_items oi
                 JOIN products p ON oi.product_id = p.product_id
                 WHERE oi.order_id = $order_id";
@@ -81,7 +81,6 @@ if (empty($order_items)) {
             <tr>
                 <th>Product Image</th>
                 <th>Product Name</th>
-                <th>Quantity</th>
                 <th>Price</th>
                
             </tr>
@@ -91,7 +90,7 @@ if (empty($order_items)) {
                 <tr>
                     <td><img src="<?php echo $item['product_image']; ?>" alt="Product Image" width="50" height="50"></td>
                     <td><?php echo $item['product_name']; ?></td>
-                    <td><?php echo $item['quantity']; ?></td>
+                  
                     <td>Rs.<?php echo number_format($item['product_price'], 2); ?></td>
                  
                 </tr>

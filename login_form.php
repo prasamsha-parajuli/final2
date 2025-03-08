@@ -26,14 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: $return_url");
                 exit();
             } else {
-                $generalError[] = "Invalid email/username or password!";
+                $generalError[] = "Invalid username or password!";
             }
-        } else {
-            $generalError[] = "Invalid email/username or password!";
-        }
-    } else {
-        $generalError[] = "Please provide both email/username and password!";
+        } 
+     else {
+        $generalError[] = "Please provide both username and password!";
     }
+}
 }
 ?>
 
@@ -57,8 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <span class="error_msg"><?php echo $error; ?></span>
             <?php } ?>
         <?php } ?>
-        <input type="text" name="email" placeholder="Email or Name" value="<?php echo htmlspecialchars($email); ?>" required>
-        <input type="password" name="password" placeholder="Password" required>
+        <input type="text" name="email" placeholder="Email or Name" value="<?php echo htmlspecialchars($email); ?>" >
+        <input type="password" name="password" placeholder="Password" >
         <input type="submit" name="submit" value="Login" class="form-btn">
         <p>Don't have an account? <a href="signin.php">Register</a></p>
     </form>

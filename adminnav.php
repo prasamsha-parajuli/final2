@@ -18,7 +18,6 @@
                 <li><i class="fa-solid fa-user"></i><a href="user_list.php">Users List</a></li>
                 <li><i class="fa-solid fa-list"></i><a href="product_list.php">Products</a></li>
                 <li><i class="fa-solid fa-bag-shopping"></i><a href="order_list.php">Ordered Lists</a></li>
-                <li><i class="fa-solid fa-users"></i><a  href="transaction.php">Transaction Action</a></li>
                 <li><i class="fa-solid fa-right-from-bracket"></i><a href="admin_logout.php">Log Out</a></li>
           
         </div>

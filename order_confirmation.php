@@ -9,27 +9,25 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Fetch all transaction details with grouped products
-$transaction_query = "
-    SELECT t.*, o.status, 
+// Fetch all order details with grouped products
+$order_query = "
+    SELECT o.*, 
            GROUP_CONCAT(p.product_name SEPARATOR ', ') AS products,
            GROUP_CONCAT(p.product_image SEPARATOR ', ') AS product_images
-    FROM transactions t
-    JOIN orders o ON t.order_id = o.order_id
+    FROM orders o
     JOIN order_items oi ON o.order_id = oi.order_id
     JOIN products p ON oi.product_id = p.product_id
-    WHERE t.buyer_id = '$user_id'
-    GROUP BY t.transaction_id
-    ORDER BY t.transaction_date DESC";
+    WHERE o.user_id = '$user_id'
+    GROUP BY o.order_id
+    ORDER BY o.order_date DESC";
 
-$transaction_result = mysqli_query($conn, $transaction_query);
+$order_result = mysqli_query($conn, $order_query);
 
-if (!$transaction_result) {
-    die("Error fetching transaction details: " . mysqli_error($conn));
+if (!$order_result) {
+    die("Error fetching order details: " . mysqli_error($conn));
 }
 
-$transactions = (mysqli_num_rows($transaction_result) > 0) ? mysqli_fetch_all($transaction_result, MYSQLI_ASSOC) : [];
-
+$orders = (mysqli_num_rows($order_result) > 0) ? mysqli_fetch_all($order_result, MYSQLI_ASSOC) : [];
 ?>
 
 <!DOCTYPE html>
@@ -37,56 +35,54 @@ $transactions = (mysqli_num_rows($transaction_result) > 0) ? mysqli_fetch_all($t
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transaction Details</title>
+    <title>Order Details</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <?php include 'navbar.php'; ?>
 
 <section class="cart-container">
-    <h1>Transaction Details</h1>
+    <h1>Order Details</h1>
     
-    <?php if (!empty($transactions)): ?>
+    <?php if (!empty($orders)): ?>
         <div class="cart-table">
             <table>
                 <tr>
-                    <th>Transaction ID</th>
+                    <th>Order ID</th>
                     <th>Products</th>
-                    <th>Amount</th>
+                    <th>Total Amount</th>
                     <th>Order Status</th>
                     <th>Payment Status</th>
                     <th>Payment Method</th>
-                    <th>Transaction Date</th>
+                    <th>Order Date</th>
                 </tr>
-                <?php foreach ($transactions as $transaction): ?>
+                <?php foreach ($orders as $order): ?>
                     <tr>
-                        <td><?php echo $transaction['transaction_id']; ?></td>
+                        <td><?php echo $order['order_id']; ?></td>
                         <td>
                             <?php 
-                            $product_names = explode(",", $transaction['products']);
-                            $product_images = explode(",", $transaction['product_images']);
+                            $product_names = explode(",", $order['products']);
+                            $product_images = explode(",", $order['product_images']);
                             
                             foreach ($product_names as $index => $name): ?>
                                 <div class="product-item">
-                                <img src="<?php echo trim($product_images[$index]); ?>" alt="" width="50">
-
+                                    <img src="<?php echo trim($product_images[$index]); ?>" alt="" width="50">
                                     <?php echo htmlspecialchars(trim($name)); ?>
                                 </div>
                             <?php endforeach; ?>
                         </td>
-                     
-                        <td>Rs. <?php echo number_format($transaction['amount'], 2); ?></td>
-                        <td><?php echo htmlspecialchars($transaction['status']); ?></td>
-                        <td><?php echo htmlspecialchars($transaction['payment_status']); ?></td>
-                        <td><?php echo htmlspecialchars($transaction['payment_method']); ?></td>
-                        <td><?php echo date("d M Y, H:i:s", strtotime($transaction['transaction_date'])); ?></td>
+                        <td>Rs. <?php echo number_format($order['total_amount'], 2); ?></td>
+                        <td><?php echo htmlspecialchars($order['status']); ?></td>
+                        <td><?php echo htmlspecialchars($order['payment_status']); ?></td>
+                        <td><?php echo htmlspecialchars($order['payment_method']); ?></td>
+                        <td><?php echo date("d M Y, H:i:s", strtotime($order['order_date'])); ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
         </div>
     <?php else: ?>
-        <p>No transaction details found.</p>
+        <p>No order details found.</p>
     <?php endif; ?>
 
     <a href="index.php" class="continue-shopping-btn">Back to Home</a>

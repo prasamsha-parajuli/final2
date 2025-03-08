@@ -5,7 +5,7 @@ include 'config.php';
 $order_id = $_POST['order_id'];
 $payment_status = $_POST['payment_status'];
 
-// Update the payment status
+// Update the payment status in the orders table
 $query = "UPDATE orders SET payment_status = '$payment_status' WHERE order_id = '$order_id'";
 $result = mysqli_query($conn, $query);
 
@@ -13,14 +13,7 @@ if (!$result) {
     die('Error updating payment status: ' . mysqli_error($conn));
 }
 
-// Also update the payment status in the transactions table for both the admin and the user
-$query_transaction = "UPDATE transactions SET payment_status = '$payment_status' WHERE order_id = '$order_id'";
-$result_transaction = mysqli_query($conn, $query_transaction);
-
-if (!$result_transaction) {
-    die('Error updating transaction payment status: ' . mysqli_error($conn));
-}
-
+// Redirect to the order list page
 header('Location: order_list.php');
 exit();
 ?>
