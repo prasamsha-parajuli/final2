@@ -6,40 +6,38 @@ $adminError=[];
 $email='';//initializing email to use in the form 
 
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'&& isset($_POST['submit'])){
-    $email=trim($_POST['email']);
-    $pass=$_POST['password'];
-    if(empty($email) ||empty($pass)){
-      $adminError[]='All fields are required';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+  $email = trim($_POST['email']);
+  $pass = $_POST['password'];
 
-    } 
-    else{
-      $stmt=$conn->prepare("SELECT * FROM user_form WHERE email=?");
-      $stmt->bind_param("s", $email);
-      $stmt->execute();
+  if (empty($email) || empty($pass)) {
+      $adminError[] = 'All fields are required';
+  } else {
+      // Sanitize email input
+      $email = mysqli_real_escape_string($conn, $email);
+      
+      // Fetch admin data
+      $sql = "SELECT * FROM user_form WHERE email='$email'";
+      $result = mysqli_query($conn, $sql);
 
-      $result=$stmt->get_result();
-  
-      if($result->num_rows>0){
-        $admin=$result->fetch_assoc() ;
-  if(password_verify($pass,$admin['password'])){
-    $_SESSION['admin_name']=$admin['name'];
-    if ($admin['user_type'] === 'admin') {
-        header('Location: admin2.php');
-        exit();
-    }
-
-  }
-        else{
-          $adminError[]='Invalid admin username or password';
-        }
+      if ($result && mysqli_num_rows($result) > 0) {
+          $admin = mysqli_fetch_assoc($result);
+          if (password_verify($pass, $admin['password'])) {
+              session_regenerate_id(true); // Regenerate session ID
+              $_SESSION['admin_name'] = $admin['name'];
+              $_SESSION['admin_id'] = $admin['user_id']; // Store unique admin ID
+              if ($admin['user_type'] === 'admin') {
+                  header('Location: admin2.php');
+                  exit();
+              }
+          } else {
+              $adminError[] = 'Invalid admin username or password';
+          }
+      } else {
+          $adminError[] = 'Invalid admin username or password';
       }
-        else{
-          $adminError[]='Invalid admin username or password';
-        }
-    }
-
-};
+  }
+}
 ?>
 
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'auth.php';
 include 'config.php'; 
 if (isset($_GET['id'])&& !empty($_GET['id'])){

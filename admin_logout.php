@@ -1,9 +1,8 @@
 <?php
-include 'config.php';
+// admin_logout.php
 session_start();
 session_unset();
 session_destroy();
-
-header('location:adminlogin.php');
+header('Location: adminlogin.php');
 exit();
 ?>

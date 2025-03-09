@@ -62,9 +62,9 @@ $total_sales = mysqli_fetch_assoc($result_sales)['total_sales'];
             <div class="profile-details">
                 <h3>Your Profile</h3>
                 <?php 
-                    $sql = "SELECT user_id, name, email, phone, address FROM user_form WHERE user_type = 'admin' LIMIT 1";
-                    $result = mysqli_query($conn, $sql);
-                    $admin = mysqli_fetch_assoc($result);
+                $sql = "SELECT user_id, name, email, phone, address FROM user_form WHERE user_id = '" . $_SESSION['admin_id'] . "'";
+                $result = mysqli_query($conn, $sql);
+                $admin = mysqli_fetch_assoc($result);
                 ?>
                 <p><strong>Admin Name:</strong> <?php echo $admin['name']; ?></p>
                 <p><strong>Email:</strong> <?php echo $admin['email']; ?></p>

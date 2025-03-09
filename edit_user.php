@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'auth.php';
 include 'config.php'; 
 
@@ -52,7 +53,7 @@ else{
 
     <label for="phone">Phone Number:</label>
     <input type="text" id="phone" name="phone" value="<?php echo $old_data['phone'];?>">
-    <label for="address">Phone Number:</label>
+    <label for="address">Address:</label>
     <input type="address" id="address" name="address" value="<?php echo $old_data['address'];?>">
 
     <button type="submit" name="save_changes">Save Changes</button>

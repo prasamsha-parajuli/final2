@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'config.php';
 
 // Get the order ID and payment status from the POST request

@@ -1,4 +1,5 @@
 <?php
+session_start(); // Start the session
 include 'config.php';
 
 // Get the order ID and status from the POST request

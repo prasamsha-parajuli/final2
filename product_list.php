@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'auth.php';
 include 'config.php'; 
 $product_name=$product_price=$category="";
