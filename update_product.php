@@ -20,7 +20,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         $product_price = mysqli_real_escape_string($conn, $_POST['product_price']);
         $category = mysqli_real_escape_string($conn, $_POST['category']);
 
-        // Validation
+     
         $errors = [];
         if(empty($product_name)){
             $errors[] = "Product Name is required.";

@@ -26,13 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     if (!empty($emptyFields)) {
         $generalError = 'All fields are required! Missing: ' . implode(', ', $emptyFields);
     } else {
-        // Server side validation (for other specific conditions)
+       
         if (!preg_match("/^[a-zA-Z\s]+$/", $name)) {
             $generalError = 'Name should only contain letters!';
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $generalError = 'Invalid Email format!';
         } elseif (!preg_match("/^\d{10}$/", $phone)) {
             $generalError = 'Phone number must be 10 digits!';
+        } elseif (strlen($pass) < 8) {
+            $generalError = 'Password must be at least 8 characters long!';
         } elseif ($pass != $cpass) {
             $generalError = 'Passwords do not match!';
         } else {
@@ -62,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5fce70dfef.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="signin.css">
 </head>
 <body>

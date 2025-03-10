@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     <div class="form-container">
        
         <form action="" method="POST">
-        <h3>Login Form</h3>
+        <h3>Admin Login Form</h3>
         <?php if (!empty($adminError)) { ?>
             <?php foreach ($adminError as $error) { ?>
                 <span class="error_msg"><?php echo $error; ?></span>

@@ -27,7 +27,7 @@ $cart_check_query = "SELECT * FROM shopping_cart WHERE user_id = $user_id AND pr
 $result = mysqli_query($conn, $cart_check_query);
 
 if (mysqli_num_rows($result) === 0) {
-    // Insert product into cart without quantity
+    // Insert product into cart 
     $insert_query = "INSERT INTO shopping_cart (user_id, product_id, created_at) VALUES ($user_id, $product_id, NOW())";
     mysqli_query($conn, $insert_query);
 }

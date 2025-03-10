@@ -29,12 +29,9 @@
      Who Are We?
     </h2>
     <p>
-        ThriftNest is an online thrift store launched in 2024, championing sustainability and the joy of reusability.
-          Designed to reduce overconsumption, ThriftNest provides a seamless user experience through a simple,intuitive 
-          interface that allows customers to buy and sell pre-loved items with ease. We prioritize quality,ensuring every
-           item meets our standards, so you can shop worry-free. Sellers have a unique opportunity to  earn from items they
-            no longer need, while buyers can elevate their wardrobes with unique, affordable finds. ThriftNest brings a
-            fresh, eco-conscious approach to fashion—Happy Thrifting!
+    ThriftNest is an online thrift store launched in 2024, championing sustainability and the joy of reusability. Designed to reduce overconsumption, ThriftNest offers a seamless shopping experience through a simple, intuitive interface that allows customers to discover and purchase high-quality, pre-loved items with ease.
+
+We prioritize quality, ensuring every item meets our standards so you can shop worry-free. Find unique, affordable fashion while making a positive impact on the environment. ThriftNest brings a fresh, eco-conscious approach to fashion—Happy Thrifting!
     </p>
   
 </div>

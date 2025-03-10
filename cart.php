@@ -15,7 +15,7 @@ if (isset($_GET['remove_id'])) {
     $remove_id = $_GET['remove_id'];
     $query = "DELETE FROM shopping_cart WHERE cart_id = $remove_id AND user_id = $user_id";
     mysqli_query($conn, $query);
-    header("Location: cart.php"); // Redirect back to the cart page after removal
+    header("Location: cart.php"); 
     exit();
 }
 

@@ -26,14 +26,15 @@
         </div>
         <div class="blog-details">
             <h4>Thrifting through Thriftstore</h4>
-            <p>Thriftnest takes a sustainable approach to fashion by encouraging sellers to declutter their wardrobes and list
-                 a variety of items in our store.
-                 Our platform provides sellers with a way to earn money from pre-loved items, while guaranteeing buyers
-                  a curated selection of high-quality products. 
-                 Buyers can enjoy a wide range of stylish options to suit their unique tastes without spending a large sum.
-                With user-friendly features like organized categories, responsive design, and flexible pricing, Thriftnest 
-                creates an enjoyable thrifting experience for both sellers and buyers. Discover a sustainable fashion journey 
-                through Thriftnest today!</p>
+            <p>Thriftnest redefines sustainable fashion by offering a carefully curated selection of high-quality,
+                 pre-loved items. Our platform provides buyers with unique, stylish finds at affordable prices,
+                  making fashion both accessible and eco-friendly.
+
+                With an intuitive design, organized categories, and a seamless shopping experience,
+                 Thriftnest makes thrifting effortless and enjoyable. Discover a new way to shop sustainably—find
+                  your next favorite piece today!
+
+</p>
               <!-- <a href="#" >See more</a> -->
             
         </div>
@@ -45,24 +46,22 @@
            <img src="Image/seller3.jpeg" alt="">
         </div>
         <div class="blog-details">
-            <h4>How to become a Seller?</h4>
+            <h4>How Thriftnest Works</h4>
             
-               <p> Becoming a seller with Thriftnest means joining our community, and we're here to make the process as simple as possible.</p> 
+               <p> At Thriftnest, we make it easy for buyers to discover and shop high-quality, pre-loved fashion. Here's how you can enjoy a seamless thrifting experience:</p> 
                <ul>
-               <li><strong>Sign Up:</strong> Create an account to become a seller. Once registered, you'll have access to a personal dashboard where you can track your sales, adjust pricing, and manage delivery information.
-            </li> 
+               <li><strong>Curated Selection:</strong>Every item on our platform is carefully handpicked to ensure 
+               quality and style. No need to sift through endless listings—only the best pieces make it to our store.
                 <li>
-                    <strong>Set Delivery Details:</strong>Provide delivery information for items you wish to thrift. We offer two options for item drop-off: either schedule a pickup or deliver them to our warehouse.
-                </li>
-                <li> <strong>Inspection and Upload:</strong> Our team will inspect your items and decide what will be listed on our website. Items selected for thrifting will be uploaded, while others can be returned to you or donated.
+                    <strong>One-of-a-Kind Finds:</strong> Since each item is unique, once its sold, it's gone! Check back often for new arrivals.</li>
+                <li> <strong>Seamless Shopping:</strong>Our user-friendly interface makes browsing, purchasing, and checkout smooth and hassle-free.
                 </li> 
-                <li><strong>Price Revisions:</strong> While you can adjust item pricing, we encourage trusting our pricing recommendations for optimized sales.
+                <li><strong>Affordable & Sustainable:</strong>Shop stylish, pre-loved items at great prices while reducing fashion waste.
                 </li>
-                <li><strong>Sales Reports and Earnings:</strong> Access reports on your dashboard to view earnings from sold items. You'll receive 100% of the profit from your sales, making it a valuable opportunity to earn while supporting sustainable fashion.
-                </li>
+                <li><strong>Fast & Reliable Delivery:</strong> Get your thrifted finds delivered to your doorstep with ease.</li>
                </ul>
                 
-               <p>It's a straightforward way to clear out your wardrobe, contribute to sustainability, and make extra cash with Thriftnest.</p>
+               <p>Join us in redefining fashion—shop Thriftnest today!.</p>
               <!-- <a href="#" >See more</a> -->
             
         </div>

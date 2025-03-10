@@ -14,7 +14,6 @@ if (!$result) {
     die('Error updating payment status: ' . mysqli_error($conn));
 }
 
-// Redirect to the order list page
 header('Location: order_list.php');
 exit();
 ?>
