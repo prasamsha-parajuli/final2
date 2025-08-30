@@ -15,6 +15,18 @@ $result = mysqli_query($conn, $query);
 $products = mysqli_num_rows($result) > 0 ? mysqli_fetch_all($result, MYSQLI_ASSOC) : [];
 
 ?>
+<?php
+if (isset($_SESSION['login_success'])) {
+    $message = $_SESSION['login_success'];
+    echo "
+    <script>
+        window.onload = function() {
+            alert('$message');
+        };
+    </script>";
+    unset($_SESSION['login_success']);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,8 +96,13 @@ $products = mysqli_num_rows($result) > 0 ? mysqli_fetch_all($result, MYSQLI_ASSO
 
 
 
+
 <!-- <hr> -->
+ 
 <?php include 'footer.php'; ?>
     <script src="script.js"></script>
 </body>
+
+
+
 </html>

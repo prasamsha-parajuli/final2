@@ -16,16 +16,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
 
-            if (password_verify($password, $user['password'])) {
-                $_SESSION['user_name'] = $user['name'];
-                $_SESSION['user_id'] = $user['user_id'];
-                $_SESSION['user_address'] = $user['address']; // Storing address in session
+        if (password_verify($password, $user['password'])) {
+    $_SESSION['user_name'] = $user['name'];
+    $_SESSION['user_id'] = $user['user_id'];
+    $_SESSION['user_address'] = $user['address'];
 
-                // Redirect to return URL or index.php
-                $return_url = isset($_GET['return_url']) ? $_GET['return_url'] : 'index.php';
-                header("Location: $return_url");
-                exit();
-            } else {
+    // Add success message in session
+    $_SESSION['login_success'] = "Logged in successfully. Welcome, {$user['name']}!!!";
+
+    // Redirect to index.php (or return_url)
+    $return_url = isset($_GET['return_url']) ? $_GET['return_url'] : 'index.php';
+    header("Location: $return_url");
+    exit();
+}
+else {
                 $generalError[] = "Invalid username or password!";
             }
         } 

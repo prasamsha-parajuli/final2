@@ -28,6 +28,48 @@ if (!$order_result) {
 }
 
 $orders = (mysqli_num_rows($order_result) > 0) ? mysqli_fetch_all($order_result, MYSQLI_ASSOC) : [];
+
+// ==== ALERT HANDLER ====
+$alert_message = '';
+
+// Show session message first (COD)
+if (isset($_SESSION['order_success'])) {
+    $alert_message = $_SESSION['order_success'];
+    unset($_SESSION['order_success']);
+}
+// Otherwise, show Khalti GET message
+elseif (isset($_GET['status']) && isset($_GET['order_id'])) {
+    $order_id_from_khalti = intval($_GET['order_id']);
+    switch ($_GET['status']) {
+        case 'success':
+            $alert_message = "Payment for Order ID #$order_id_from_khalti was successful!";
+            break;
+        case 'failed':
+            $alert_message = "Payment for Order ID #$order_id_from_khalti failed. Please try again.";
+            break;
+        case 'cancelled':
+            $alert_message = "Payment for Order ID #$order_id_from_khalti was cancelled by user.";
+            break;
+        case 'closed':
+            $alert_message = "Payment modal for Order ID #$order_id_from_khalti was closed.";
+            break;
+        case 'error':
+            $alert_message = "An error occurred during payment for Order ID #$order_id_from_khalti. Please check your order status.";
+            break;
+        default:
+            $alert_message = "Order #$order_id_from_khalti status updated.";
+            break;
+    }
+}
+
+if (!empty($alert_message)) {
+    echo "
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            alert(" . json_encode($alert_message) . ");
+        });
+    </script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +79,7 @@ $orders = (mysqli_num_rows($order_result) > 0) ? mysqli_fetch_all($order_result,
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Details</title>
     <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
 <?php include 'navbar.php'; ?>
@@ -66,7 +106,6 @@ $orders = (mysqli_num_rows($order_result) > 0) ? mysqli_fetch_all($order_result,
                             <?php 
                             $product_names = explode(",", $order['products']);
                             $product_images = explode(",", $order['product_images']);
-                            
                             foreach ($product_names as $index => $name): ?>
                                 <div class="product-item">
                                     <img src="<?php echo trim($product_images[$index]); ?>" alt="" width="50">
